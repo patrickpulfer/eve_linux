@@ -1,4 +1,4 @@
-# Guide to sucessfully setup a new Linux installation and get Eve Online installed with best performance
+# Guide to sucessfully setup a new Linux installation for gaming and get Eve Online installed with best performance
 
 Note: Work in progress! 
 
