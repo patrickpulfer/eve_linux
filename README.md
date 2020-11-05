@@ -4,7 +4,7 @@ Assumption:
 1. You use a fairly recent Linux distro based on Ubuntu (ex. POP!_OS, Mint, etc). Most of the steps may have already been done by you or pre-done by the OS.
 2. Installation may require a few steps but you only need to do this once to have a fully working gaming system.
 
-## 1 - Installation of 
+# 1 - Preparing Linux for Gaming
 
 For this guide, we will make use of [Lutris](https://lutris.net/).
 
@@ -67,3 +67,31 @@ Change the following files and add this line to the bottom of /etc/systemd/syste
 DefaultLimitNOFILE=524288
 ```
 
+## Feral GameMode
+GameMode is a daemon/lib combo for Linux that allows games to request a set of optimisations be temporarily applied to the host OS and/or a game process. [Source](https://github.com/FeralInteractive/gamemode)
+
+1. Install Dependencies
+```
+apt install meson libsystemd-dev pkg-config ninja-build git libdbus-1-dev libinih-dev dbus-user-session -y
+```
+2. Build & Install
+```
+git clone https://github.com/FeralInteractive/gamemode.git
+cd gamemode
+git checkout 1.5.1 # omit to build the master branch
+./bootstrap.sh
+```
+
+# Install Eve Online & Configure
+
+## Install Eve Online
+1. Navigate to https://lutris.net/games/eve-online/
+2. Select installer with DXVK + ESYNC
+3. Install Eve and don't start the game from launcher yet
+
+## Configure for best performance
+1. Open settings in Lutris
+2. Select Eve Online and click on Settings
+3. On system settings, enable ACO and GameMode
+
+# Voila! Ready to rock!
