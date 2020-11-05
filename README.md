@@ -1,7 +1,8 @@
-# Guide to sucessfully install Eve Online and run it with ACO Shader Compiler + Feral Gamemode
+# Guide to sucessfully setup a new Linux installation and get Eve Online installed + running with excellent performance
 
 Assumption:
-You use a fairly recent Linux distro based on Ubuntu (ex. POP!_OS, Mint, etc). Most of the steps may have already been done by you or pre-done by the OS.
+1. You use a fairly recent Linux distro based on Ubuntu (ex. POP!_OS, Mint, etc). Most of the steps may have already been done by you or pre-done by the OS.
+2. Installation may require a few steps but you only need to do this once to have a fully working gaming system.
 
 ## 1 - Installation of 
 
@@ -45,8 +46,24 @@ sudo apt update
 sudo apt install nvidia-driver-450 libnvidia-gl-450 libnvidia-gl-450:i386 libvulkan1 libvulkan1:i386 -y
 ```
 
+## Valve's ACO Shader Compiler
+Add this to /etc/environment:
+```
+RADV_PERFTEST=aco
+```
 
+## Esync
+What is Esync?
+Esync removes wineserver overhead for synchronization objects. This can increase performance for some games, especially ones that rely heavily on the CPU.
 
+Check to see if esync is enabled already (most distributions do by default)
+```
+ulimit -Hn
+```
 
-
+If this returns more than 500,000 than ESYNC IS ENABLED! If not, proceed with these instructions:
+Change the following files and add this line to the bottom of /etc/systemd/system.conf & /etc/systemd/user.conf
+```
+DefaultLimitNOFILE=524288
+```
 
