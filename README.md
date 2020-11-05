@@ -1,4 +1,6 @@
-# Guide to sucessfully setup a new Linux installation and get Eve Online installed + running with excellent performance
+# Guide to sucessfully setup a new Linux installation and get Eve Online installed with best performance
+
+Note: Work in progress! 
 
 Assumption:
 1. You use a fairly recent Linux distro based on Ubuntu (ex. POP!_OS, Mint, etc). Most of the steps may have already been done by you or pre-done by the OS.
